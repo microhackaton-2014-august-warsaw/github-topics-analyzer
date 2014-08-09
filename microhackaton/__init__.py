@@ -6,4 +6,8 @@ from .celery import app as celery_app
 
 from service_discovery import ServiceDiscovery
 
-sd = ServiceDiscovery('/pl/pl/microhackaton', 'zookeeper.microhackathon.pl:2181')
+try:
+    sd = ServiceDiscovery('/pl/pl/microhackaton', 'zookeeper.microhackathon.pl:2181')
+except Exception, ex:
+    print ex
+    sd = None
