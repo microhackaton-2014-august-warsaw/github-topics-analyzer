@@ -5,4 +5,13 @@ from celery import shared_task
 
 @shared_task
 def process(pair_id, msg):
-    pass
+
+    user_id = 'test'
+    topics = ['a', 'b', 'c']
+
+    result = {
+        'pairId': pair_id,
+        'analyzerType': 'github',
+        'analyzedId': user_id,
+        'topics': [{'name': topic} for topic in topics]
+    }
