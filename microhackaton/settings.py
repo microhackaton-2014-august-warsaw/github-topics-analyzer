@@ -15,8 +15,8 @@ from __future__ import absolute_import
 # becomes `proj.celery.schedules` in Python 2.x since it allows
 # for relative imports by default.
 # Celery settings
-#BROKER_URL = 'amqp://admin:admin@activemq.microhackathon.pl:5672//'
-BROKER_URL = 'django://'
+BROKER_URL = 'amqp://rabbitmq.microhackathon.pl:5672//'
+#BROKER_URL = 'django://'
 #: Only add pickle to this list if your broker is secured
 #: from unwanted access (see userguide/security.html)
 CELERY_ACCEPT_CONTENT = ['json']
