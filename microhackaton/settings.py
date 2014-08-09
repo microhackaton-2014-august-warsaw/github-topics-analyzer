@@ -102,4 +102,4 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates')
 )
 
-LOG_FILE = './logs/github-topics-analyzer.log'
+LOG_FILE = '/home/deployment/logs/github-topics-analyzer.log'
