@@ -5,5 +5,5 @@ from .tasks import *
 
 @require_http_methods(["POST"])
 def analyze(request, pair_id):
-    process.delay(3, 4)
+    process.delay(pair_id, request.POST)
     return HttpResponse(pair_id, mimetype='text/plain')
