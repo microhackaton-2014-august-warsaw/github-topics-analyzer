@@ -104,3 +104,5 @@ TEMPLATE_DIRS = (
 
 SERVICE_URL = 'http://localhost'
 SERVICE_PORT = 8911
+
+LOG_FILE = './logs/github-topics-analyzer.log'
