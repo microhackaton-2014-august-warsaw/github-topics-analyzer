@@ -1,8 +1,9 @@
 import json
+import os
 
 from django.test import TestCase
-from analyzer import analyze
-
+from ghtopanal.analyzer import analyze
+from microhackaton.settings import BASE_DIR
 
 class AnalyzeTestCase(TestCase):
 
@@ -11,7 +12,7 @@ class AnalyzeTestCase(TestCase):
 
     def test_parses_repositories_and_organisations(self):
         # given
-        with open("test_input.json") as input_file:
+        with open(os.path.join(BASE_DIR, os.path.join('ghtopanal', "test_input.json"))) as input_file:
             data = json.loads(input_file.read())
 
         # when
@@ -21,7 +22,7 @@ class AnalyzeTestCase(TestCase):
         self.assertEqual(result["pairId"], "2")
         self.assertEqual(result["analyzerType"], "github")
         self.assertEqual(result["analyzedId"], "jroper")
-        self.assertEqual(sorted(result["topics"]), [
+        self.assertEqual(sorted(result["topics"], key=lambda item: item['name']), [
             {
                 "name": u"Java"
             }, {
