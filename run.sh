@@ -5,7 +5,8 @@ git pull origin master
 
 mkdir venv
 virtualenv $DIR/venv/ghtopanal
-source $DIR/venv/ghtopanal/bin/activate
+chmod +x $DIR/venv/ghtopanal/bin/activate
+. $DIR/venv/ghtopanal/bin/activate
 
 pip install -r requirements.txt
 
