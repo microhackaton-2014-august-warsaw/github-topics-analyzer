@@ -99,14 +99,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
-<<<<<<< HEAD
+    os.path.join(BASE_DIR,  'templates')
 )
-=======
-)
-
-SERVICE_URL = 'http://localhost'
-SERVICE_PORT = 8911
 
 LOG_FILE = './logs/github-topics-analyzer.log'
->>>>>>> 4f629326f4034fac2b4aca11b287ed68fd991172
