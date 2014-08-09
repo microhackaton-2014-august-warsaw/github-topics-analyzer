@@ -13,7 +13,9 @@ def analyze(input):
     terms.extend(extract_organisation_names(input["orgs"]))
     terms.extend(extract_repository_names(input["repos"]))
 
-    for term in set(terms):
-        yield {
-            "name": term
-        }
+    return {
+        "pairId": input["pairId"],
+        "analyzerType": "github",
+        "analyzedId": input["githubId"],
+        "topics": [{"name": term} for term in terms]
+    }
