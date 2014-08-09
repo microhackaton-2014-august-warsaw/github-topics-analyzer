@@ -16,13 +16,4 @@ if [ $? != 0 ]; then
 fi
 PORT=8911
 
-PIDFILE='/tmp/ghtopanal.pid'
-
-uwsgi --stop $PIDFILE
-uwsgi --chdir=$DIR --module=microhackaton.wsgi:application --env DJANGO_SETTINGS_MODULE=microhackaton.settings --env HOST=$HOST --env PORT=$PORT --http=0.0.0.0:$PORT --home=$DIR/venv/ghtopanal
-
-#--processes=5 --harakiri=20 --max-requests=5000 --vacuum
-
-# --master --pidfile=$PIDFILE --daemonize=$DIR/ghtopanal.log
-
-#
+python manage.py runserver $HOST:$PORT
