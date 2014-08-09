@@ -101,6 +101,3 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
-
-SERVICE_URL = 'http://localhost'
-SERVICE_PORT = 8911

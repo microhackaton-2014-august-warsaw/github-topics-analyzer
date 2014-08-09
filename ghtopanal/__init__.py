@@ -1,4 +1,5 @@
-from microhackaton import sd
-from microhackaton.settings import SERVICE_URL, SERVICE_PORT
+import os
 
-sd.register('github-topics-analyzer', SERVICE_URL, SERVICE_PORT)
+from microhackaton import sd
+
+sd.register('github-topics-analyzer', os.environ['HOST'], os.environ['PORT'])
