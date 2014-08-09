@@ -15,8 +15,6 @@ if [ $? != 0 ]; then
 fi
 PORT=8911
 
-celery -A microhackaton worker -D
-
 PIDFILE='/tmp/ghtopanal.pid'
 
 uwsgi --stop $PIDFILE
