@@ -3,6 +3,7 @@ import json
 
 from celery import shared_task
 import requests
+import ghtopanal.logger
 
 from microhackaton import sd
 
@@ -14,4 +15,6 @@ def process(msg):
     result = analyze(msg)
     url = sd.get_instances('topics-collector')
     headers = {'Content-type': 'application/json'}
-    requests.post(url, data=json.dumps(result), headers=headers)
+    data = json.dumps(result)
+    ghtopanal.logger.debug(data.get("pairId"), "Responding with: " + data)
+    requests.post(url, data=data, headers=headers)
