@@ -22,11 +22,13 @@ def analyze(request):
             super(LogSuccessResponse, self).close()
             try:
                 result = ghtopanal.analyzer.analyze(data)
+                ghtopanal.logger.debug(result.get("pairId"), "Getting zookeeper configuration")
                 if sd is None:
                     url = "http://localhost:8080"
                     ghtopanal.logger.warn(result.get("pairId"), "ZooKeeper not found, using localhost:8080 as target")
                 else:
                     url = sd.get_instance('topics-collector')
+                    ghtopanal.logger.debug(result.get("pairId"), "Got zookeeper configuration: " + str(url))
                 headers = {'Content-type': 'application/json'}
                 response = json.dumps(result)
                 ghtopanal.logger.debug(result.get("pairId"), "Responding to " + url + " with: " + response)
