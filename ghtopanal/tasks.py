@@ -4,9 +4,8 @@ from celery import shared_task
 
 
 @shared_task
-def process(pair_id, msg):
+def process(pair_id, user_id, msg):
 
-    user_id = 'test'
     topics = ['a', 'b', 'c']
 
     result = {
