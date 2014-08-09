@@ -16,4 +16,5 @@ if [ $? != 0 ]; then
 fi
 PORT=8911
 
+export PUBLIC_HOST=$HOST
 python manage.py runserver $HOST:$PORT
