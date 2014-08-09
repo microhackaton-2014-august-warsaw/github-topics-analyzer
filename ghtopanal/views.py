@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import HttpResponse
 from django.http import HttpResponseNotAllowed
+
 
 def analyze(request, pair_id):
     if request.method == 'POST':
