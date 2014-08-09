@@ -16,5 +16,5 @@ def process(msg):
     url = sd.get_instances('topics-collector')
     headers = {'Content-type': 'application/json'}
     data = json.dumps(result)
-    ghtopanal.logger.debug(data.get("pairId"), "Adding to queue")
+    ghtopanal.logger.debug(data.get("pairId"), "Responding with: " + data)
     requests.post(url, data=data, headers=headers)

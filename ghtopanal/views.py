@@ -10,6 +10,7 @@ def analyze(request):
     if not request.body:
         ghtopanal.logger.warn("", "Request body missing")
         return HttpResponseBadRequest()
-    ghtopanal.logger.debug("", "Analyze called with" + str(request.body))
-    process.delay(str(request.body))
+    data = json.loads(str(request.body))
+    ghtopanal.logger.debug(data.get("pairId"), "Queuing request: " + str(data))
+    process.delay(data)
     return HttpResponse(status=202)
