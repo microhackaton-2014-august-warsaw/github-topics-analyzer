@@ -17,4 +17,4 @@ fi
 PORT=8911
 
 export PUBLIC_HOST=$HOST
-python manage.py runserver $HOST:$PORT
+python manage.py runserver 0.0.0.0:$PORT
