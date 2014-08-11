@@ -4,7 +4,8 @@ import os
 import threading
 
 from django.test import TestCase
-from ghtopanal.logger import create_log_message
+
+from microhackaton.logger import create_log_message
 from ghtopanal.analyzer import analyze
 from microhackaton.settings import BASE_DIR
 
